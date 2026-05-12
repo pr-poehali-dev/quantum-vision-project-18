@@ -126,23 +126,39 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 grid grid-cols-3 gap-5 sm:grid-cols-5 lg:grid-cols-9 max-w-6xl"
+          className="mx-auto mt-14 max-w-4xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
-          {PRODUCTS.map((product, index) => (
-            <div key={index} className="flex flex-col items-center gap-2">
-              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+          {/* Крепёж по центру */}
+          <div className="flex justify-center mb-8">
+            <div className="flex flex-col items-center gap-2 w-48">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 aspect-square w-full">
                 <img
-                  src={product.src}
-                  alt={product.alt}
+                  src={PRODUCTS[0].src}
+                  alt={PRODUCTS[0].alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
+              <span className="text-sm font-semibold text-center leading-tight">{PRODUCTS[0].label}</span>
             </div>
-          ))}
+          </div>
+          {/* Остальные категории в 3 колонки */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-5">
+            {PRODUCTS.slice(1).map((product, index) => (
+              <div key={index} className="flex flex-col items-center gap-2">
+                <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+                  <img
+                    src={product.src}
+                    alt={product.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
 
