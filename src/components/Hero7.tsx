@@ -108,7 +108,7 @@ const Hero7 = ({
       <div className="container text-center">
         <div className="mx-auto flex max-w-5xl flex-col gap-6">
           <motion.h1
-            className="text-3xl font-extrabold lg:text-6xl font-heading text-balance"
+            className="text-5xl font-extrabold lg:text-8xl font-heading text-balance"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -120,7 +120,7 @@ const Hero7 = ({
             {heading}
           </motion.h1>
           <motion.p
-            className="text-muted-foreground text-balance lg:text-lg font-sans"
+            className="text-muted-foreground text-balance text-lg lg:text-2xl font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
