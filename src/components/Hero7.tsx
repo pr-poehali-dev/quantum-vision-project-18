@@ -133,19 +133,6 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            ease: "easeOut",
-            delay: 0.6,
-          }}
-        >
-          <Button asChild size="lg" className="mt-10">
-            <a href={button.url}>{button.text}</a>
-          </Button>
-        </motion.div>
-        <motion.div
           className="mx-auto mt-14 grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-9 max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
