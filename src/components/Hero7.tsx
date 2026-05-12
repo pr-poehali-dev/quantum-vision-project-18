@@ -4,6 +4,34 @@ import { motion } from "framer-motion"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 
+const PRODUCTS = [
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/afd7b6ab-9286-46f9-9137-8bd0e9471b75.jpeg",
+    alt: "Анкерный болт",
+    label: "Анкерный болт",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/a1dc6744-9b1b-4a1d-8eed-65e5a89fed2e.jpeg",
+    alt: "Силиконовый герметик SANZ",
+    label: "Герметик",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/97803019-4c01-49bc-b5da-4d2b387133ed.jpeg",
+    alt: "Буры для перфоратора",
+    label: "Буры",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/7625dd43-2f3b-4402-98ae-4c48db04ce5b.jpeg",
+    alt: "Фиксар П-410",
+    label: "Химический анкер",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/ed35956e-3680-416c-94a4-4a4a4dbbbde9.jpeg",
+    alt: "Строительная ткань ISOMAX",
+    label: "Строительная ткань",
+  },
+]
+
 interface Hero7Props {
   heading?: string
   description?: string
@@ -97,6 +125,26 @@ const Hero7 = ({
             <a href={button.url}>{button.text}</a>
           </Button>
         </motion.div>
+        <motion.div
+          className="mx-auto mt-14 grid grid-cols-3 gap-4 sm:grid-cols-5 max-w-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+        >
+          {PRODUCTS.map((product, index) => (
+            <div key={index} className="flex flex-col items-center gap-2">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+                <img
+                  src={product.src}
+                  alt={product.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <span className="text-xs text-muted-foreground font-medium text-center">{product.label}</span>
+            </div>
+          ))}
+        </motion.div>
+
         <motion.div
           className="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row"
           initial={{ opacity: 0, y: 20 }}
