@@ -18,7 +18,7 @@ const PRODUCTS = [
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/97803019-4c01-49bc-b5da-4d2b387133ed.jpeg",
     alt: "Буры для перфоратора",
-    label: "Буры",
+    label: "Оснастка",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/7625dd43-2f3b-4402-98ae-4c48db04ce5b.jpeg",
@@ -28,7 +28,7 @@ const PRODUCTS = [
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/ed35956e-3680-416c-94a4-4a4a4dbbbde9.jpeg",
     alt: "Строительная ткань ISOMAX",
-    label: "Строительная ткань",
+    label: "Ветро-влагазащита",
   },
 ]
 
