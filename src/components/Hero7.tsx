@@ -30,6 +30,26 @@ const PRODUCTS = [
     alt: "Строительная ткань ISOMAX",
     label: "Ветро-влагазащита",
   },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/66b6fbe7-06f4-4b64-99d4-bc28570f8cce.jpeg",
+    alt: "Подкладочный ковёр",
+    label: "Подкладочный ковёр",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/e1e064bb-2b01-4a86-9004-d8f238ec25dd.png",
+    alt: "Защитная плёнка",
+    label: "Защитная плёнка",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/4169afb3-560f-4bdb-80e1-d3a212a928e5.jpeg",
+    alt: "Перфоратор DCK",
+    label: "Инструмент",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/afe6258d-e03d-4a89-abc1-b75a3096607e.jpg",
+    alt: "Испытания крепежа на объекте",
+    label: "Испытания",
+  },
 ]
 
 interface Hero7Props {
@@ -126,7 +146,7 @@ const Hero7 = ({
           </Button>
         </motion.div>
         <motion.div
-          className="mx-auto mt-14 grid grid-cols-3 gap-4 sm:grid-cols-5 max-w-3xl"
+          className="mx-auto mt-14 grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-9 max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
