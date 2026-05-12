@@ -133,7 +133,7 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 max-w-5xl"
+          className="mx-auto mt-14 grid grid-cols-9 gap-4 max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
