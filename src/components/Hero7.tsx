@@ -113,7 +113,7 @@ const Hero7 = ({
             {heading}
           </motion.h1>
           <motion.p
-            className="text-muted-foreground text-balance lg:text-xl font-sans"
+            className="text-muted-foreground text-balance lg:text-lg font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -126,69 +126,41 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 flex flex-wrap justify-center gap-5 max-w-6xl"
+          className="mx-auto mt-14 max-w-4xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
-          {PRODUCTS.slice(1).map((product, index) => (
-            <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28 lg:w-32">
-              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+          {/* Крепёж по центру */}
+          <div className="flex justify-center mb-8">
+            <div className="flex flex-col items-center gap-2 w-48">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 aspect-square w-full">
                 <img
-                  src={product.src}
-                  alt={product.alt}
+                  src={PRODUCTS[0].src}
+                  alt={PRODUCTS[0].alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
+              <span className="text-sm font-semibold text-center leading-tight">{PRODUCTS[0].label}</span>
             </div>
-          ))}
-        </motion.div>
-
-        {/* Крепёж по центру снизу */}
-        <motion.div
-          className="flex justify-center mt-5"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
-        >
-          <div className="flex flex-col items-center gap-2" style={{minWidth: '80px', maxWidth: '120px'}}>
-            <div className="rounded-2xl overflow-hidden bg-white shadow-lg border-2 border-indigo-200 aspect-square w-full">
-              <img
-                src={PRODUCTS[0].src}
-                alt={PRODUCTS[0].alt}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <span className="text-xs sm:text-sm font-semibold text-center leading-tight">{PRODUCTS[0].label}</span>
+          </div>
+          {/* Остальные категории в 3 колонки */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-5">
+            {PRODUCTS.slice(1).map((product, index) => (
+              <div key={index} className="flex flex-col items-center gap-2">
+                <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+                  <img
+                    src={product.src}
+                    alt={product.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
+              </div>
+            ))}
           </div>
         </motion.div>
 
-        {/* Подкатегории крепежа */}
-        <motion.div
-          className="flex justify-center gap-5 mt-5"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
-        >
-          {[
-            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/88eaa9f2-edb7-4d95-9dbb-87a5e658f8e9.jpg", alt: "Дюбель-гриб", label: "Дюбель-гриб" },
-            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/a50dce80-4eda-43ca-8f07-0f4cb4b40f03.png", alt: "Фасадник", label: "Фасадник" },
-            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/66ea0c4a-d5d5-4ab7-867b-fae7c4b837d4.jpg", alt: "Шуруп по бетону", label: "Шуруп по бетону" },
-            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/4d516081-7241-4d2a-b69f-dcab544b3e1c.jpg", alt: "Клиновой анкер", label: "Клиновой анкер" },
-          ].map((item, index) => (
-            <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28 lg:w-32">
-              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{item.label}</span>
-            </div>
-          ))}
-        </motion.div>
 
       </div>
     </section>
