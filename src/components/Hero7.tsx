@@ -26,17 +26,12 @@ const PRODUCTS = [
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/ed35956e-3680-416c-94a4-4a4a4dbbbde9.jpeg",
     alt: "Строительная ткань ISOMAX",
-    label: "Ветро-влагазащита",
+    label: "Ветро-влагазащита и плёнки",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/66b6fbe7-06f4-4b64-99d4-bc28570f8cce.jpeg",
     alt: "Подкладочный ковёр",
     label: "Паронит и изделия из паронита",
-  },
-  {
-    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/e1e064bb-2b01-4a86-9004-d8f238ec25dd.png",
-    alt: "Защитная плёнка",
-    label: "Защитная плёнка",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/4169afb3-560f-4bdb-80e1-d3a212a928e5.jpeg",
