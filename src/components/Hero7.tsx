@@ -131,7 +131,7 @@ const Hero7 = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
-          {PRODUCTS.map((product, index) => (
+          {[...PRODUCTS.slice(1, 4), PRODUCTS[0], ...PRODUCTS.slice(4)].map((product, index) => (
             <div key={index} className="flex flex-col items-center gap-2">
               <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
                 <img
