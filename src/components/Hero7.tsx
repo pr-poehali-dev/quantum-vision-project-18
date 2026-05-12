@@ -164,6 +164,31 @@ const Hero7 = ({
           </div>
         </motion.div>
 
+        {/* Подкатегории крепежа */}
+        <motion.div
+          className="flex justify-center gap-5 mt-5"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.1 }}
+        >
+          {[
+            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/c338879d-194e-4329-b6ff-074995d840ef.png", alt: "Клиновой анкер", label: "Клиновой анкер" },
+            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/a50dce80-4eda-43ca-8f07-0f4cb4b40f03.png", alt: "Фасадник", label: "Фасадник" },
+            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/79e7524e-413f-4707-81af-7c8e2548fbea.png", alt: "Шуруп по бетону", label: "Шуруп по бетону" },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28 lg:w-32">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{item.label}</span>
+            </div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   )
