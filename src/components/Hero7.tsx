@@ -126,36 +126,61 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 max-w-4xl"
+          className="mx-auto mt-14 max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
-          {/* Крепёж по центру */}
-          <div className="flex justify-center mb-8">
-            <div className="flex flex-col items-center gap-2 w-48">
-              <div className="rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 aspect-square w-full">
+          {/* Крепёж — корень дерева */}
+          <div className="flex justify-center">
+            <div className="flex flex-col items-center gap-2 w-36">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-200 aspect-square w-full">
                 <img
                   src={PRODUCTS[0].src}
                   alt={PRODUCTS[0].alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-sm font-semibold text-center leading-tight">{PRODUCTS[0].label}</span>
+              <span className="text-sm font-bold text-center leading-tight">{PRODUCTS[0].label}</span>
             </div>
           </div>
-          {/* Остальные категории в 3 колонки */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-5">
-            {PRODUCTS.slice(1).map((product, index) => (
-              <div key={index} className="flex flex-col items-center gap-2">
-                <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
-                  <img
-                    src={product.src}
-                    alt={product.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
+
+          {/* Линия вниз от корня */}
+          <div className="flex justify-center">
+            <div className="w-0.5 h-8 bg-indigo-300" />
+          </div>
+
+          {/* Горизонтальная линия на 3 ветки */}
+          <div className="relative flex justify-center">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[66%] h-0.5 bg-indigo-300" />
+            {/* 3 вертикальные линии вниз */}
+            <div className="w-full flex justify-between px-[17%]">
+              <div className="w-0.5 h-8 bg-indigo-300" />
+              <div className="w-0.5 h-8 bg-indigo-300" />
+              <div className="w-0.5 h-8 bg-indigo-300" />
+            </div>
+          </div>
+
+          {/* 3 колонки категорий */}
+          <div className="grid grid-cols-3 gap-6">
+            {[
+              PRODUCTS.slice(1, 4),
+              PRODUCTS.slice(4, 6),
+              PRODUCTS.slice(6, 8),
+            ].map((group, gi) => (
+              <div key={gi} className="flex flex-col items-center gap-4">
+                {group.map((product, index) => (
+                  <div key={index} className="flex flex-col items-center gap-2 w-28">
+                    <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
+                      <img
+                        src={product.src}
+                        alt={product.alt}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <span className="text-xs text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
