@@ -175,6 +175,7 @@ const Hero7 = ({
             { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/88eaa9f2-edb7-4d95-9dbb-87a5e658f8e9.jpg", alt: "Дюбель-гриб", label: "Дюбель-гриб" },
             { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/a50dce80-4eda-43ca-8f07-0f4cb4b40f03.png", alt: "Фасадник", label: "Фасадник" },
             { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/66ea0c4a-d5d5-4ab7-867b-fae7c4b837d4.jpg", alt: "Шуруп по бетону", label: "Шуруп по бетону" },
+            { src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/4d516081-7241-4d2a-b69f-dcab544b3e1c.jpg", alt: "Клиновой анкер", label: "Клиновой анкер" },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28 lg:w-32">
               <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
