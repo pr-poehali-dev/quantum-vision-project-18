@@ -126,58 +126,41 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 max-w-4xl w-full"
+          className="mx-auto mt-14 flex flex-wrap justify-center gap-5 max-w-6xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
-          {/* Крепёж — корень */}
-          <div className="flex justify-center">
-            <div className="flex flex-col items-center gap-2 w-44 sm:w-52">
-              <div className="rounded-2xl overflow-hidden bg-white shadow-xl border-2 border-indigo-200 aspect-square w-full">
+          {PRODUCTS.slice(1).map((product, index) => (
+            <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28 lg:w-32">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
                 <img
-                  src={PRODUCTS[0].src}
-                  alt={PRODUCTS[0].alt}
+                  src={product.src}
+                  alt={product.alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-sm font-bold text-center leading-tight">{PRODUCTS[0].label}</span>
+              <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
             </div>
-          </div>
+          ))}
+        </motion.div>
 
-          {/* Ствол вниз */}
-          <div className="flex justify-center">
-            <div className="w-0.5 h-10 bg-indigo-300" />
-          </div>
-
-          {/* Горизонтальная ветка */}
-          <div className="relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-0.5 bg-indigo-300" />
-            <div className="flex justify-between px-[17%]">
-              <div className="w-0.5 h-10 bg-indigo-300" />
-              <div className="w-0.5 h-10 bg-indigo-300" />
-              <div className="w-0.5 h-10 bg-indigo-300" />
+        {/* Крепёж по центру снизу */}
+        <motion.div
+          className="flex justify-center mt-5"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
+        >
+          <div className="flex flex-col items-center gap-2" style={{minWidth: '80px', maxWidth: '120px'}}>
+            <div className="rounded-2xl overflow-hidden bg-white shadow-lg border-2 border-indigo-200 aspect-square w-full">
+              <img
+                src={PRODUCTS[0].src}
+                alt={PRODUCTS[0].alt}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
             </div>
-          </div>
-
-          {/* 3 колонки — по 2-3 категории */}
-          <div className="grid grid-cols-3 gap-4">
-            {[PRODUCTS.slice(1, 4), PRODUCTS.slice(4, 6), PRODUCTS.slice(6, 8)].map((group, gi) => (
-              <div key={gi} className="flex flex-col items-center gap-4">
-                {group.map((product, index) => (
-                  <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28">
-                    <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
-                      <img
-                        src={product.src}
-                        alt={product.alt}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <span className="text-xs sm:text-sm font-semibold text-center leading-tight">{PRODUCTS[0].label}</span>
           </div>
         </motion.div>
 
