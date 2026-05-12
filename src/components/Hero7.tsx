@@ -8,12 +8,12 @@ const PRODUCTS = [
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/afd7b6ab-9286-46f9-9137-8bd0e9471b75.jpeg",
     alt: "Анкерный болт",
-    label: "Анкерный болт",
+    label: "Крепёж",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/a1dc6744-9b1b-4a1d-8eed-65e5a89fed2e.jpeg",
     alt: "Силиконовый герметик SANZ",
-    label: "Герметик",
+    label: "Пена и герметики",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/97803019-4c01-49bc-b5da-4d2b387133ed.jpeg",
