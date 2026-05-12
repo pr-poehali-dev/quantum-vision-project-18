@@ -126,13 +126,13 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 grid grid-cols-3 gap-5 sm:grid-cols-5 lg:grid-cols-9 max-w-6xl"
+          className="mx-auto mt-14 flex flex-wrap justify-center gap-5 max-w-6xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
           {PRODUCTS.slice(1).map((product, index) => (
-            <div key={index} className="flex flex-col items-center gap-2">
+            <div key={index} className="flex flex-col items-center gap-2 w-24 sm:w-28 lg:w-32">
               <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
                 <img
                   src={product.src}
