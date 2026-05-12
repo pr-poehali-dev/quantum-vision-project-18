@@ -133,7 +133,7 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-9 max-w-5xl"
+          className="mx-auto mt-14 grid grid-cols-3 gap-5 sm:grid-cols-5 lg:grid-cols-9 max-w-6xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
@@ -147,7 +147,7 @@ const Hero7 = ({
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-xs text-muted-foreground font-medium text-center">{product.label}</span>
+              <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
             </div>
           ))}
         </motion.div>
