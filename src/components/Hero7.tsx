@@ -1,5 +1,7 @@
+import { Star } from "lucide-react"
 import { motion } from "framer-motion"
 
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 
 const PRODUCTS = [
@@ -26,12 +28,17 @@ const PRODUCTS = [
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/ed35956e-3680-416c-94a4-4a4a4dbbbde9.jpeg",
     alt: "Строительная ткань ISOMAX",
-    label: "Ветро-влагазащита и плёнки",
+    label: "Ветро-влагазащита",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/66b6fbe7-06f4-4b64-99d4-bc28570f8cce.jpeg",
     alt: "Подкладочный ковёр",
     label: "Паронит и изделия из паронита",
+  },
+  {
+    src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/e1e064bb-2b01-4a86-9004-d8f238ec25dd.png",
+    alt: "Защитная плёнка",
+    label: "Защитная плёнка",
   },
   {
     src: "https://cdn.poehali.dev/projects/c6c9bb27-f60c-409f-b1ab-3cead23e8437/bucket/4169afb3-560f-4bdb-80e1-d3a212a928e5.jpeg",
@@ -126,42 +133,52 @@ const Hero7 = ({
           </motion.p>
         </div>
         <motion.div
-          className="mx-auto mt-14 max-w-4xl"
+          className="mx-auto mt-14 grid grid-cols-3 gap-4 sm:grid-cols-5 lg:grid-cols-9 max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
         >
-          {/* Крепёж по центру */}
-          <div className="flex justify-center mb-8">
-            <div className="flex flex-col items-center gap-2 w-48">
-              <div className="rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100 aspect-square w-full">
+          {PRODUCTS.map((product, index) => (
+            <div key={index} className="flex flex-col items-center gap-2">
+              <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
                 <img
-                  src={PRODUCTS[0].src}
-                  alt={PRODUCTS[0].alt}
+                  src={product.src}
+                  alt={product.alt}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <span className="text-sm font-semibold text-center leading-tight">{PRODUCTS[0].label}</span>
+              <span className="text-xs text-muted-foreground font-medium text-center">{product.label}</span>
             </div>
-          </div>
-          {/* Остальные категории в 3 колонки */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-5">
-            {PRODUCTS.slice(1).map((product, index) => (
-              <div key={index} className="flex flex-col items-center gap-2">
-                <div className="rounded-2xl overflow-hidden bg-white shadow-md border border-gray-100 aspect-square w-full">
-                  <img
-                    src={product.src}
-                    alt={product.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <span className="text-xs sm:text-sm text-muted-foreground font-medium text-center leading-tight">{product.label}</span>
-              </div>
-            ))}
-          </div>
+          ))}
         </motion.div>
 
-
+        <motion.div
+          className="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+            delay: 0.8,
+          }}
+        >
+          <span className="mx-4 inline-flex items-center -space-x-4">
+            {reviews.avatars.map((avatar, index) => (
+              <Avatar key={index} className="size-14 border">
+                <AvatarImage src={avatar.src || "/placeholder.svg"} alt={avatar.alt} />
+              </Avatar>
+            ))}
+          </span>
+          <div>
+            <div className="flex items-center gap-1">
+              {[...Array(5)].map((_, index) => (
+                <Star key={index} className="size-5 fill-yellow-400 text-yellow-400" />
+              ))}
+              <span className="mr-1 font-semibold">{reviews.rating?.toFixed(1)}</span>
+            </div>
+            <p className="text-muted-foreground text-left font-medium">{reviews.count}+ отзывов</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
