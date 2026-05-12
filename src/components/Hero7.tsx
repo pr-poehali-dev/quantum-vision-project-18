@@ -113,7 +113,7 @@ const Hero7 = ({
             {heading}
           </motion.h1>
           <motion.p
-            className="text-muted-foreground text-balance lg:text-lg font-sans"
+            className="text-muted-foreground text-balance lg:text-xl font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
