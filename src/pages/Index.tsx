@@ -20,13 +20,7 @@ const Index = () => {
             heading="Крепёж для фасадов и строительства с 2016 года"
             description="Официальный дистрибьютор ведущих российских заводов. Качественный ассортимент крепежа по принципу «цена-качество»: консультации, испытания на объектах, поставка под ключ и покраска крепежа."
             button={{ text: "Получить консультацию", url: "#" }}
-            reviews={{ count: 500, rating: 4.9, avatars: [
-              { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp", alt: "Клиент 1" },
-              { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp", alt: "Клиент 2" },
-              { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp", alt: "Клиент 3" },
-              { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp", alt: "Клиент 4" },
-              { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-5.webp", alt: "Клиент 5" },
-            ]}}
+
           />
         </main>
       </div>
